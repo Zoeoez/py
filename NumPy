@@ -1,1 +1,104 @@
+patient data analyze
+
+part1:loading data into Python
+
+
+import numpy 
+# 导入library numpy, 
+也可以写成import numpy as np,引用则变成np.loadtxt
+numpy.loadtxt(fname='inflammation-01.csv', delimiter=',')
+#function loadtext belongs to library numpy 
+data=numpy.loadtxt(fname='inflammation-01.csv', delimiter=',')#将数据赋值给data
+print(type(data))#查看数据类型
+type functipn won’t tell you the type of thing inside the array. 
+print(data.dtype)
+output:float64
+print(data.shape)# demension of data 
+output:(60,40)#60 rows and 40 columns
+
+
+part2:slice data
+
+
+print('middle value in data:', data[30, 20])#打印矩阵中第30rows 20column的数字，py从0开始
+print(data[0:4, 0:10])
+#firstcolumns of values for the first four rows 
+#start at index 0 and go up to, but not including, index 4
+small = data[:3, 36:]
+#selects rows 0 through 2 and columns 36 through to the end of the array.
+
+
+part2:analyze data 
+numpy.mean(data), numpy.max(data), and numpy.min(data)#calculate simple statistics.
+numpy.std(data)
+print(numpy.mean(data, axis=0))#axis=0即y轴，矩阵中每列的平均数
+print(numpy.mean(data, axis=0))#axis=1即x轴，矩阵中每行的平均数
+element = 'oxygen'
+What is element[-1]? What is element[-2]?
+n
+e
+import numpy
+
+A = numpy.array([[1,2,3], [4,5,6], [7, 8, 9]])#创建矩阵
+print('A = ')
+print(A)
+
+B = numpy.hstack([A, A])
+print('B = ')
+print(B)
+
+C = numpy.vstack([A, A])
+print('C = ')
+print(C)
+A =
+[[1 2 3]
+ [4 5 6]
+ [7 8 9]]
+B =
+[[1 2 3 1 2 3]
+ [4 5 6 4 5 6]
+ [7 8 9 7 8 9]]
+C =
+[[1 2 3]
+ [4 5 6]
+ [7 8 9]
+ [1 2 3]
+ [4 5 6]
+ [7 8 9]]
+
+print(data[0:4, 0:10])
+
+
+D = numpy.hstack((A[:, :1], A[:, -1:]))#-1代表列为单位时最后一列
+print('D = ')
+print(D)
+D =
+[[1 3]
+ [4 6]
+ [7 9]]
+
+
+An alternative way to achieve the same result is to use Numpy’s delete function to remove the second column of A.
+D = numpy.delete(A, 1, 1)
+print('D = ')
+print(D)
+D =
+[[1 3]
+ [4 6]
+ [7 9]]
+ 
+ 
+ part3 差
+npdiff = numpy.array([ 0,  2,  5,  9, 14])
+numpy.diff(npdiff) #do the following calculations and put the answers in another array.
+numpy.max(numpy.absolute(numpy.diff(data, axis=1)), axis=1)
+
+
+
+
+
+
+
+
+
 
