@@ -1,0 +1,8 @@
+import matplotlib.pyplot
+#import the pyplot module from matplotlib
+image = matplotlib.pyplot.imshow(data)
+matplotlib.pyplot.show()#create and display a heat map of our data
+
+ave_inflammation = numpy.mean(data, axis=0)#
+ave_plot = matplotlib.pyplot.plot(ave_inflammation)
+matplotlib.pyplot.show()
